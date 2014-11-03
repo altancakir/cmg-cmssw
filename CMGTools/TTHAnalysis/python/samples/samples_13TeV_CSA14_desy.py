@@ -53,7 +53,11 @@ TTJets_PU40bx25_V52 = kreator.makeMCComponent("TTJets_PU40bx25_V52",    "/TTJets
 
 ZprimeToMuMu_1000_PU20bx25_V52 = kreator.makeMCComponent("ZprimeToMuMu_1000_PU20bx25_V52",    "/ZprimeToMuMu_M-1000_Tune4C_13TeV-pythia8/Spring14miniaod-PU20bx25_POSTLS170_V5-v1/MINIAODSIM", "CMS", ".*root")
 
-mcSamples = [ TTJets_PU20bx25_V52,TTJets_PU40bx25_V52,ZprimeToMuMu_1000_PU20bx25_V52 ]
+## PRIVATE SAMPLES -- FASTSIM
+
+susy_sb650Fast_FullModel_CSA14_InTimePU = kreator.makePrivateMCComponent("susy_sb650_FullModel_CSA14_InTimePU", "/TTJets_MSDecaysCKM_central_Tune4C_13TeV-madgraph-tauola/Spring14miniaod-PU20bx25_POSTLS170_V5-v2/MINIAODSIM", [ "/nfs/dust/cms/user/cakir/cmssw2015/test_miniAOD/Test_Samples/MiniAODs/susy_sbottom650_miniAOD_CSA14_inTimeOnly.root" ])
+
+mcSamples = [ TTJets_PU20bx25_V52,TTJets_PU40bx25_V52,ZprimeToMuMu_1000_PU20bx25_V52, susy_sb650Fast_FullModel_CSA14_InTimePU ]
 
 #-----------DATA---------------
 dataDir = os.environ['CMSSW_BASE']+"/src/CMGTools/TTHAnalysis/data"
